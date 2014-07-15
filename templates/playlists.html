@@ -1,28 +1,23 @@
 <ion-view title="Geeks">
-  <ion-nav-buttons side="left">
-    <button class="button button-positive"
-              ng-click="randomizeGeeks()">
-        Move Geeks a Step
-      </button>
-  </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+        <button class="button button-positive" ng-click="randomizeGeeks()">
+            Move Geeks a Step
+        </button>
+    </ion-nav-buttons>
 
-  <ion-nav-buttons side="right">
-    <button class="button button-positive"
-              ng-click="startSimulation()">
-        Simulate Geek Movements
-      </button>
-  </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-positive" ng-click="startSimulation()">
+            Simulate Geek Movements
+        </button>
+    </ion-nav-buttons>
 
-
-  <ion-content class="has-header">
-    <ion-list>
-      <ion-item ng-repeat="geek in geeks" href="#/app/playlists/{{geek.id}}">
-        {{geek.id}} @ {{geek.x}}/{{geek.y}}
-        {{geek.color}}
-        <div ng-repeat="t in geek.tech">{{t}}</div>
-      </ion-item>
-    </ion-list>
+    <div style="width:100%; height:100%">
+        <d3-geeks-plotter data="geeks"></d3-geeks-plotter>
+    </div>
 
 
-  </ion-content>
 </ion-view>
+
+<!-- <div>
+    <d3-geeks-plotter data="geeks"></d3-geeks-plotter>
+</div> -->
